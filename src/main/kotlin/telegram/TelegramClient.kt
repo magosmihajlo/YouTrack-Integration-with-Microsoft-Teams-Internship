@@ -4,6 +4,7 @@ import config.Config
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.engine.cio.*
+import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
@@ -29,18 +30,23 @@ class TelegramClient(private val config: Config) {
                 ignoreUnknownKeys = true
             })
         }
+        install(HttpTimeout) {
+            requestTimeoutMillis = 30_000
+            connectTimeoutMillis = 10_000
+            socketTimeoutMillis = 30_000
+        }
     }
 
     @Serializable
     data class SendMessageRequest(
-        val chatId: String,
+        val chat_id: String,
         val text: String,
-        val parseMode: String = "Markdown"
+        val parse_mode: String = "Markdown"
     )
 
     suspend fun sendMessage(text: String) {
         val url = "$baseBotUrl/sendMessage"
-        val requestBody = SendMessageRequest(chatId = config.telegramChatId, text = text)
+        val requestBody = SendMessageRequest(chat_id = config.telegramChatId, text = text)
 
         try {
             val response: HttpResponse = client.post(url) {
@@ -105,12 +111,12 @@ class TelegramClient(private val config: Config) {
                     try {
                         val issue = youTrack.fetchIssue(issueId)
                         if (issue != null) {
-                            val message = $$"""
+                            val message = """
                             🧾 *Issue Details*
-                            *ID:* $${issue.idReadable}
-                            *Title:* $${issue.summary}
-                            *State:* $${issue.state ?: "_unknown_"}
-                            *Description:* $${issue.description ?: "_(no description)_"}
+                            *ID:* ${issue.idReadable}
+                            *Title:* ${issue.summary}
+                            *State:* ${issue.state ?: "_unknown_"}
+                            *Description:* ${issue.description ?: "_(no description)_"}
                         """.trimIndent()
                             sendMessage(message)
                         } else {
