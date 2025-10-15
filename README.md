@@ -411,7 +411,7 @@ This project is created for educational purposes as part of an internship applic
 
 ## 👤 Author
 
-Created with Kotlin as part of the YouTrack integration internship application.
+Mihajlo Magoš - Created with Kotlin as part of the YouTrack integration internship application.
 
 **Technologies Demonstrated:**
 - REST API integration (YouTrack, Telegram, Teams)
@@ -432,6 +432,11 @@ Created with Kotlin as part of the YouTrack integration internship application.
 - **kotlinx.serialization** for type-safe JSON handling
 
 ---
+
+## Links to YouTube demonstrations:
+https://youtu.be/V4_7cnSMgjM
+https://youtu.be/3zp29BAy3xo
+https://youtu.be/uZIXujnWr8c
 
 ---
 
