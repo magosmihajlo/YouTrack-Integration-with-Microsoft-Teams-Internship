@@ -68,7 +68,6 @@ Manage YouTrack issues without leaving Telegram:
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship
-cd youtrack-notifier
 ```
 
 ### 2. Set Up Telegram Bot (Optional - Skip if using Teams only)
