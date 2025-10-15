@@ -201,7 +201,7 @@ Once running, you'll see logs like:
 ### Receiving Notifications
 
 #### In Telegram
-When a new issue is created in YouTrack, you'll receive:
+When a new issue is created in YouTrack, you'll receive something like:
 ```
 🆕 New YouTrack Issue
 ID: MI-42
@@ -226,23 +226,20 @@ Simply send commands to your bot in Telegram:
 
 **Create an issue:**
 ```
-/new "Implement dark mode" "Add dark mode support to the dashboard"
+![/new](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/new.png)
 ```
-Response: `✅ Issue MI-43 created!`
 
 **List recent issues:**
 ```
-/list
-```
+[/list](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/list.png)```
 
 **Get issue details:**
 ```
-/info MI-42
-```
+[/info](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/info.png)```
 
 **Show help:**
 ```
-/help
+![/help](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/help.png)
 ```
 
 ---
@@ -304,11 +301,15 @@ The application supports three operation modes via the `MESSENGER_MODE` environm
 - ❌ Teams notifications disabled
 - **Use case**: You only use Telegram or don't have Teams access
 
+  
+
 ### 2. Teams Only (`MESSENGER_MODE=teams`)
 - ❌ Telegram notifications disabled
 - ❌ Telegram bot commands disabled
 - ✅ Sends notifications to Teams
 - **Use case**: You only use Teams or want to test Teams integration
+
+![/teams](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/polling%20teams.png)
 
 ### 3. Both Messengers (`MESSENGER_MODE=both`)
 - ✅ Sends notifications to **both** Telegram and Teams simultaneously
@@ -342,9 +343,6 @@ The application supports three operation modes via the `MESSENGER_MODE` environm
 - Test the webhook with curl: `curl -H "Content-Type: application/json" -d '{"text":"Test"}' YOUR_WEBHOOK_URL`
 - Check that the connector is still active in Teams channel settings
 - Ensure `MESSENGER_MODE` includes `teams` or `both`
-
-### Issue: "Summary or Text is required" from Teams
-**Solution:** This error should be fixed in the current version using MessageCard format. If you still see it, ensure you're using the latest `TeamsClient.kt` code.
 
 ### Issue: Notifications not appearing
 **Solution:**
@@ -435,36 +433,6 @@ Created with Kotlin as part of the YouTrack integration internship application.
 - **kotlinx.serialization** for type-safe JSON handling
 
 ---
-
-## 📸 Screenshots
-
-### Telegram Notification
-```
-🆕 New YouTrack Issue
-ID: MI-42
-Title: Implement user authentication
-State: Open
-Description: Add OAuth2 support for user login...
-⏰ 2025-10-15T14:23:45.123Z
-```
-
-### Teams Notification
-![Teams MessageCard with color-coded header, issue details, and timestamp]
-
-### Telegram Bot Commands
-```
-> /list
-🗂️ Latest Issues:
-
-MI-42 — Implement user authentication
-Open
-
-MI-41 — Fix responsive layout
-In Progress
-
-MI-40 — Update documentation
-Resolved
-```
 
 ---
 
