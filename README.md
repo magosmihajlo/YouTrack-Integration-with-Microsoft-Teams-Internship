@@ -67,7 +67,7 @@ Manage YouTrack issues without leaving Telegram:
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship
 cd youtrack-notifier
 ```
 
@@ -129,7 +129,7 @@ Create a `.env` file in the project root:
 # ========================================
 YOUTRACK_URL=https://yourinstance.youtrack.cloud
 YOUTRACK_TOKEN=perm:your_permanent_token_here
-YOUTRACK_PROJECT_ID=0-1
+YOUTRACK_PROJECT_ID=
 
 # ========================================
 # Telegram Configuration (OPTIONAL)
@@ -434,7 +434,6 @@ Mihajlo Magoš - Created with Kotlin as part of the YouTrack integration interns
 ---
 
 ## Links to YouTube demonstrations:
-https://youtu.be/V4_7cnSMgjM
 https://youtu.be/3zp29BAy3xo
 https://youtu.be/uZIXujnWr8c
 
