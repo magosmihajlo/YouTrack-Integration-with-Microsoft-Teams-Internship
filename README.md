@@ -225,22 +225,21 @@ You'll see a formatted MessageCard with:
 Simply send commands to your bot in Telegram:
 
 **Create an issue:**
-```
-![/new](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/new.png)
-```
+
+[/new](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/new.png)
 
 **List recent issues:**
-```
-[/list](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/list.png)```
+
+[/list](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/list.png)
 
 **Get issue details:**
-```
-[/info](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/info.png)```
+
+[/info](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/info.png)
 
 **Show help:**
-```
+
 ![/help](https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship/blob/818b71e00d7059b9c9d97c47c26bc16d1c9c773f/help.png)
-```
+
 
 ---
 
