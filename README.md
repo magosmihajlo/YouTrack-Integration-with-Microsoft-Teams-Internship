@@ -394,7 +394,7 @@ Potential improvements aligned with the internship goals:
 
 ## 📄 API References
 
-- [YouTrack REST API Documentation](https://www.jetbrains.com/help/youtrack/devportal/api-overview.html)
+- [YouTrack REST API Documentation](https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html#general-notes)
 - [Telegram Bot API Documentation](https://core.telegram.org/bots/api)
 - [Microsoft Teams Incoming Webhooks](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook)
 - [Teams MessageCard Reference](https://learn.microsoft.com/en-us/outlook/actionable-messages/message-card-reference)
