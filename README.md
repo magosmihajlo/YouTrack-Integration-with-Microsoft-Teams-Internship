@@ -42,8 +42,8 @@ Manage YouTrack issues without leaving Telegram:
 
 ## 🛠️ Technology Stack
 
-- **Kotlin 2.2.20** — Modern JVM language with coroutines
-- **Ktor 2.3.12** — Asynchronous HTTP client for REST API calls
+- **Kotlin** — Modern JVM language with coroutines
+- **Ktor** — Asynchronous HTTP client for REST API calls
 - **kotlinx.serialization** — Type-safe JSON serialization/deserialization
 - **Coroutines** — Concurrent polling and message handling
 - **Logback** — Structured logging with SLF4J
@@ -68,6 +68,7 @@ Manage YouTrack issues without leaving Telegram:
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Teams-Internship
+cd YouTrack-Integration-with-Microsoft-Teams-Internship
 ```
 
 ### 2. Set Up Telegram Bot (Optional - Skip if using Teams only)
@@ -78,28 +79,36 @@ git clone https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Te
 3. Copy the **bot token** (format: `1234567890:ABCdefGHIjklMNOpqrsTUVwxyz`)
 
 #### Get Your Chat ID
-1. Start a chat with your bot and send any message
-2. Visit:
+1. Start a chat with your bot
+2. Send any message
+3. Visit:
 ```
    https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates
 ```
-3. Look for `"chat":{"id":123456789}` in the response
-4. Copy the chat ID
+4. Look for `"chat":{"id":123456789}` in the response
+5. Copy the chat ID
 
 ### 3. Set Up Microsoft Teams Webhook (Optional - Skip if using Telegram only)
 
 #### Create an Incoming Webhook
 1. Open Microsoft Teams
 2. Navigate to the channel where you want notifications (or create a new one)
-3. Click **•••** (three dots) next to the channel name
-4. Select **Connectors** or **Workflows** (depending on your Teams version)
-5. Search for **"Incoming Webhook"**
-6. Click **Configure** or **Add**
-7. Give it a name (e.g., "YouTrack Notifier")
-8. Optionally upload an icon
-9. Click **Create**
-10. **Copy the webhook URL** (format: `https://yourorg.webhook.office.com/webhookb2/...`)
-11. Click **Done**
+3. **⚠️ Important Note Regarding Teams Account Types**
+   - This integration has been tested and verified with **Microsoft Teams for Education/Enterprise** accounts (organizational/institutional accounts)
+   - **Personal Microsoft Teams accounts** may have limited or disabled webhook functionality depending on your organization's policies
+   - **Recommended:** Use a Teams workspace provided by your organization, university, or company
+   - **Alternative:** If you don't have access to an organizational Teams account, consider using Telegram instead by setting `MESSENGER_MODE=telegram` in your `.env` file
+   - If you encounter issues with webhook creation, contact your Teams administrator to verify that Incoming Webhooks are enabled for your tenant
+4. Click **•••** (three dots) next to the "General" part of the chat (top right)
+5. Select **Manage Channel**
+6. Select **Connectors**
+7. Search for **"Incoming Webhook"**
+8. Click **Configure** or **Add**
+9. Give it a name (e.g., "YouTrack Notifier")
+10. Optionally upload an icon
+11. Click **Create**
+12. **Copy the webhook URL** (format: `https://yourorg.webhook.office.com/webhookb2/...`)
+13. Click **Done**
 
 ⚠️ **Security Note:** Keep your webhook URL private - anyone with it can post to your channel!
 
@@ -107,11 +116,11 @@ git clone https://github.com/magosmihajlo/YouTrack-Integration-with-Microsoft-Te
 
 #### Create a Permanent Token
 1. Log into your YouTrack instance
-2. Navigate to **Profile → Authentication → Tokens**
+2. Navigate to **Profile → Account Security → New Token**:
+   https://yourinstance.youtrack.cloud/users/me?tab=account-security
 3. Click **New Token** and set permissions:
-    - ✅ **Read Issues**
-    - ✅ **Create Issues** (for Telegram commands)
-    - ✅ **Read Project**
+    - ✅ **YouTrack**
+    - ✅ **YouTrack Administration**
 4. Copy the generated permanent token
 
 #### Get Your Project ID
@@ -128,7 +137,7 @@ Create a `.env` file in the project root:
 # ========================================
 YOUTRACK_URL=https://yourinstance.youtrack.cloud
 YOUTRACK_TOKEN=perm:your_permanent_token_here
-YOUTRACK_PROJECT_ID=
+YOUTRACK_PROJECT_ID=0-1
 
 # ========================================
 # Telegram Configuration (OPTIONAL)
@@ -433,7 +442,11 @@ Mihajlo Magoš - Created with Kotlin as part of the YouTrack integration interns
 ---
 
 ## Links to YouTube demonstrations:
+
+**YouTrack notifier with both Telegram and Teams:**
 https://youtu.be/3zp29BAy3xo
+
+**Proof that issues are added to YouTrack:**
 https://youtu.be/uZIXujnWr8c
 
 ---
